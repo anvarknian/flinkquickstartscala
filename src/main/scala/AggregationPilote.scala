@@ -11,7 +11,7 @@ import org.apache.flink.streaming.api.windowing.time.Time
 import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer08
 
 
-object FlinkKafkaExample extends App {
+object AggregationPilote extends App {
 
 
     val env = StreamExecutionEnvironment.getExecutionEnvironment()
