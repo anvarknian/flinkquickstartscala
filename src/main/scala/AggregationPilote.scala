@@ -14,8 +14,6 @@ import org.apache.flink.streaming.connectors.kafka.FlinkKafkaConsumer08
 object FlinkKafkaExample extends App {
 
 
-  object FlinkKafka {
-
     val env = StreamExecutionEnvironment.getExecutionEnvironment()
 
     // get CLI parameters
@@ -44,21 +42,19 @@ object FlinkKafkaExample extends App {
     val windowStep = 1 // window slides 1 day
 
     val reducedStream = stream
-      .map(transaction => {
-        transaction.numberOfTransactions = 1
-        transaction
-      })
-      .groupBy("InternalEvent"  )// groups transactions in the same group
+      .keyBy("InternalEvent", _ )// groups transactions in the same group
       .timeWindow(Time.days(windowSize),Time.days(windowStep))
-      .sum("numberOfTransactions");
+      .map(transaction => {
+            transaction.numberOfTransactions = 1
+            transaction
+            })
+      .sum("numberOfTransactions")
 
-
+    env.execute()
     // Exporting result as a Gson / scala string template
     // val streamFormatedAsJson = reducedStream.map(functionToParseDataAsJson)
     // streamFormatedAsJson.sink(SinkToWriteYourData)
 
-
-  }
 
 }
 
