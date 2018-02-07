@@ -23,8 +23,6 @@
     <orderEntry type="library" name="sbt: org.scala-lang:scala-library:2.12.4:jar" level="project" />
     <orderEntry type="library" name="com.google.code.gson:gson:2.8.2" level="project" />
     <orderEntry type="library" name="scala-sdk-2.11.12" level="application" />
-    <orderEntry type="library" name="Maven: io.confluent:kafka-avro-serializer:unknown" level="project" />
-    <orderEntry type="library" name="Maven: io.confluent:kafka-avro-serializer:unknown" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-streaming-java_2.11:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-core:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.flink:flink-annotations:1.4.0" level="project" />

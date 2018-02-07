@@ -26,14 +26,6 @@ under the License.
 	<version>1.0-SNAPSHOT</version>
 	<name>Flink Streaming Confluent</name>
 
-	<repositories>
-		<repository>
-			<id>confluent</id>
-			<name>Confluent</name>
-			<url>http://packages.confluent.io/maven/</url>
-		</repository>
-	</repositories>
-
 	<properties>
 		<main.class>FlinkKafkaExample</main.class>
 		<confluent.version>2.0.1</confluent.version>
@@ -41,10 +33,6 @@ under the License.
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>io.confluent</groupId>
-			<artifactId>kafka-avro-serializer</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-streaming-java_2.11</artifactId>
