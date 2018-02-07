@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/flinkquickstartscala.iml" filepath="$PROJECT_DIR$/flinkquickstartscala.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flink-streaming-confluent.iml" filepath="$PROJECT_DIR$/flink-streaming-confluent.iml" />
     </modules>
   </component>
 </project>

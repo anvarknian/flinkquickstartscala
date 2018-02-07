@@ -34,9 +34,7 @@ object FlinkKafkaExample extends App {
     kafkaProps.setProperty("zookeeper.connect", zookeeperConnect)
     kafkaProps.setProperty("group.id", groupId)
 
-    val consumer = new FlinkKafkaConsumer08[String] (java.util.regex.Pattern.compile("day-[1-3]"),
-      new SimpleStringSchema,
-      kafkaProps)
+    val consumer = new FlinkKafkaConsumer08[String] (java.util.regex.Pattern.compile("day-[1-3]"), new SimpleStringSchema, kafkaProps)
 
 
 
@@ -46,18 +44,16 @@ object FlinkKafkaExample extends App {
     val windowStep = 1 // window slides 1 day
 
     val reducedStream = stream
-      .groupBy("InternalEvent")// that groups transactions in the same group
       .map(transaction => {
         transaction.numberOfTransactions = 1
         transaction
       })
-
+      .groupBy("InternalEvent"  )// groups transactions in the same group
       .timeWindow(Time.days(windowSize),Time.days(windowStep))
       .sum("numberOfTransactions");
 
 
     // Exporting result as a Gson / scala string template
-
     // val streamFormatedAsJson = reducedStream.map(functionToParseDataAsJson)
     // streamFormatedAsJson.sink(SinkToWriteYourData)
 
